@@ -33,6 +33,8 @@ public class BookModel implements Serializable {
     @Column(nullable = false)
     private int publicationYear;
 
+    /* review é a resenha do livro, um texto para guardar um resumo ou opinião sobre ele.
+       nullable = true quer dizer que pode ficar sem resenha; TEXT permite guardar um texto maior. */
     @Column(nullable = true, columnDefinition = "TEXT")
     private String review;
 
