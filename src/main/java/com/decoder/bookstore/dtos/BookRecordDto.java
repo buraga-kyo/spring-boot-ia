@@ -10,8 +10,8 @@ public record BookRecordDto(
         @NotBlank @Size(max = 100) String author,
         @NotBlank @Size(max = 100) String publisher,
 
-        // @NotNull requires a year; @Positive requires a value greater than zero.
-        // @Positive adds input validation beyond the course example.
+        /* Aqui temos outro exemplo que saiu diferente da aula, ele adicionou esse @Positive vou pedir para ele explicar aqui abaixou oque é isso */
+        // @Positive aceita apenas valores maiores que zero
         @NotNull @Positive Integer publicationYear
 ) {
 }

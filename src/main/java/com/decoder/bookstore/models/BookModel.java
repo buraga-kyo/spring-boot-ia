@@ -18,6 +18,8 @@ public class BookModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
+    /* essa linha diferiu da aula da senhorita, seria o modelo que esta diferente? não sabemos... */
     @Column(nullable = false)
     private UUID id;
 
@@ -34,7 +36,7 @@ public class BookModel implements Serializable {
     private int publicationYear;
 
     /* review é a resenha do livro, um texto para guardar um resumo ou opinião sobre ele.
-       nullable = true quer dizer que pode ficar sem resenha; TEXT permite guardar um texto maior. */
+       TEXT permite guardar um texto maior. */
     @Column(nullable = true, columnDefinition = "TEXT")
     private String review;
 
