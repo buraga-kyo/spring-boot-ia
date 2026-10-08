@@ -29,13 +29,18 @@ with an AI-generated summary on creation.
 - Never change `ddl-auto` away from `update`.
 - Use UUID-type identifiers.
 
-## Guardrails
-A `PreToolUse` hook (`.claude/hooks/guardrails.sh`, wired in `.claude/settings.json`)
-runs before every `Edit`/`Write`. On `.java` files it blocks exactly two things:
-- `import lombok`
-- `@Autowired` on its own line (field injection)
+## Codex guardrails
+- Never add `import lombok` to Java files.
+- Never use field injection with `@Autowired`; use constructor injection.
+- Apply the relevant skills in `.agents/skills/` when changing APIs, JPA
+  entities, repositories, or Neon configuration.
 
-If an edit is blocked, fix the code — do not work around the hook.
+## Commits
+- Make one focused commit for each user prompt that changes repository files.
+- Stage only files changed for that prompt; preserve unrelated work and secrets.
+- Keep the configured Git user as the primary author. For work done by Codex,
+  add `Co-authored-by: Codex <29005841+codex[bot]@users.noreply.github.com>`.
+- Do not create empty commits for prompts that only ask questions.
 
 ## Teaching mode
 This code will be explained line by line on video.
