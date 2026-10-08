@@ -28,13 +28,17 @@ public class BookService {
     }
 
     public void save(BookRecordDto bookRecordDto) {
-        BookModel bookModel = new BookModel();
+        /* var foi a primeira palavra que ela realmente escreveu no projeto inteiro kkk */
+        var bookModel = new BookModel();
         BeanUtils.copyProperties(bookRecordDto, bookModel);
         bookRepository.save(bookModel);
     }
 
     public void update(UUID id, BookRecordDto bookRecordDto) {
-        BookModel bookModel = bookRepository.findById(id).orElseThrow();
+        /* Essa linha também ficou diferente da aula, não sei porque ele colocou e vou pedir para o programdor me explicar abaixo */
+        // Find the existing book so the update keeps its id and review.
+        // If the id does not exist, orElseThrow() throws NoSuchElementException.
+        var bookModel = bookRepository.findById(id).orElseThrow();
         BeanUtils.copyProperties(bookRecordDto, bookModel);
         bookRepository.save(bookModel);
     }
