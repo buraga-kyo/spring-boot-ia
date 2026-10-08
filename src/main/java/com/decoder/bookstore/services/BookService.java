@@ -36,8 +36,8 @@ public class BookService {
 
     public void update(UUID id, BookRecordDto bookRecordDto) {
         /* Essa linha também ficou diferente da aula, não sei porque ele colocou e vou pedir para o programdor me explicar abaixo */
-        // Find the existing book so the update keeps its id and review.
-        // If the id does not exist, orElseThrow() throws NoSuchElementException.
+        // Busca o livro existente para atualizar seus dados sem perder o id e o review.
+        // Se o id não existir, orElseThrow() lança NoSuchElementException.
         var bookModel = bookRepository.findById(id).orElseThrow();
         BeanUtils.copyProperties(bookRecordDto, bookModel);
         bookRepository.save(bookModel);
