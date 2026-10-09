@@ -29,13 +29,13 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @GetMapping
+    @GetMapping(version = "v1")
     public ResponseEntity<List<BookModel>> getAllBooks() {
         List<BookModel> books = bookService.findAll();
         return ResponseEntity.status(HttpStatus.OK).body(books);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}", version = "v1")
     public ResponseEntity<BookModel> getOneBook(@PathVariable UUID id) {
         Optional<BookModel> book = bookService.findById(id);
         if (book.isEmpty()) {
@@ -45,13 +45,13 @@ public class BookController {
         return ResponseEntity.status(HttpStatus.OK).body(book.get());
     }
 
-    @PostMapping
+    @PostMapping(version = "v1")
     public ResponseEntity<BookModel> saveBook(@RequestBody @Valid BookRecordDto bookRecordDto) {
         BookModel bookModel = bookService.save(bookRecordDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(bookModel);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping(value = "/{id}", version = "v1")
     public ResponseEntity<Void> updateBook(@PathVariable UUID id, @RequestBody @Valid BookRecordDto bookRecordDto) {
         if (bookService.findById(id).isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -61,7 +61,7 @@ public class BookController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}", version = "v1")
     public ResponseEntity<Void> deleteBook(@PathVariable UUID id) {
         if (bookService.findById(id).isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
