@@ -1,6 +1,7 @@
 package com.decoder.bookstore.controllers;
 
 import com.decoder.bookstore.dtos.BookRecordDto;
+import com.decoder.bookstore.models.BookModel;
 import com.decoder.bookstore.services.BookService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -26,9 +27,9 @@ public class BookController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> saveBook(@RequestBody @Valid BookRecordDto bookRecordDto) {
-        bookService.save(bookRecordDto);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+    public ResponseEntity<BookModel> saveBook(@RequestBody @Valid BookRecordDto bookRecordDto) {
+        BookModel bookModel = bookService.save(bookRecordDto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(bookModel);
     }
 
     @PutMapping("/{id}")

@@ -27,11 +27,11 @@ public class BookService {
         return bookRepository.findById(id);
     }
 
-    public void save(BookRecordDto bookRecordDto) {
+    public BookModel save(BookRecordDto bookRecordDto) {
         /* var foi a primeira palavra que ela realmente escreveu no projeto inteiro kkk */
         var bookModel = new BookModel();
         BeanUtils.copyProperties(bookRecordDto, bookModel);
-        bookRepository.save(bookModel);
+        return bookRepository.save(bookModel);
     }
 
     public void update(UUID id, BookRecordDto bookRecordDto) {
