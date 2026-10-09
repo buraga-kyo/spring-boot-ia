@@ -45,6 +45,8 @@ public class BookController {
     public ResponseEntity<Void> deleteBook(@PathVariable UUID id) {
         if (bookService.findById(id).isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            /* esse codigo foi gerado diferente do da aula também
+            * o da aula foi return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Book not found"); */
         }
 
         bookService.delete(id);
