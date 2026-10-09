@@ -1,6 +1,10 @@
 spring:
   application:
     name: bookstore
+  ai:
+    google:
+      genai:
+        api-key: ${GEMINI_API_KEY}
   config:
     import: optional:file:.env[.properties]
   datasource:
