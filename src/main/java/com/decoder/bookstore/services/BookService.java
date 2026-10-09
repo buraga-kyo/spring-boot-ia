@@ -14,9 +14,11 @@ import java.util.UUID;
 public class BookService {
 
     private final BookRepository bookRepository;
+    private final ReviewService reviewService;
 
-    public BookService(BookRepository bookRepository) {
+    public BookService(BookRepository bookRepository, ReviewService reviewService) {
         this.bookRepository = bookRepository;
+        this.reviewService = reviewService;
     }
 
     public List<BookModel> findAll() {
@@ -31,6 +33,8 @@ public class BookService {
         /* var foi a primeira palavra que ela realmente escreveu no projeto inteiro kkk */
         var bookModel = new BookModel();
         BeanUtils.copyProperties(bookRecordDto, bookModel);
+        String review = reviewService.generateReview(bookRecordDto.title());
+        bookModel.setReview(review);
         return bookRepository.save(bookModel);
     }
 
