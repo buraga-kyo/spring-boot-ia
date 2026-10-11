@@ -10,3 +10,16 @@ Eu só precisei mandar um prompt e o Codex foi útil pra achar o `urlXXX` que es
 ![Tabela tb_books criada no Neon](docs/images/neon-tb-books.png)
 
 Evidentemente, sem o GRANDE IAAAAA eu JAMAAAAAAAAAAIS conseguiria trocar uma URL, escolher o Java certo e conferir uma tabela no Neon. Ainda bem que ele apareceu para salvar a humanidade desse desafio impossível. kkk
+
+# Notas sobre a aula completa
+Teve duas coisas interessantes que ela não mostrou na aula de 2022 e uma delas eu tinha reclamado na outra aula inclusive, que é o uso de variavel ambiente; Acho que isso é a unica coisa que vou elogiar e também o uso de versionamento
+para a API; Fora isso ela parecia ate impressionada com o Claude fazendo tudo que ela mandava a partir de skill e prompts, e foi aqui, que ela pecou... A aula era sobre o novo spring e spring IA e ela e na minha opnião ela focou mais
+em vibecoding com claude cli do que em ensinar o framework, ela não falou sobre IoC mal falou o que é DispatcherServlet apenas disse o nome e usou porcamente o claude... faltou arquivos essenciais para o desenvolvimento de sistemas seguros guiado
+por IA como PRD, TechSpecs, Hardening/Security, fora que, a skill esta bem mal feita, faltou ensinar a usar o CAVEMAN para economia de tokens, RTK para economia de uso de ferramentas do sistema operacional; E ela ainda ensina a usar o MCP do
+neon, cara... MCP é uma maquina de consumir tokens, totalmente desnecessario enquanto a gente tiver que pagar por token MCP é aquele cara descenessario da empresa que todo patrão empurra só para dizer que tem, nem ele, nem o patrão, nem os colegas de trabalho
+gosta muito dele, é mais demorado, consome tokens para um caralho e de quebra, se a IA estiver fora ou acabar seu plano de pobre melhorado do claude/codex ai fudeu né, tu não sabe nem usar o serviço externo, porque não preparou uma API estava usando MCP.
+ela usou .env e não deixou no .gitignore, não falou nada sobre .env-example, enfim esse eu coloquei aqui no meu projeto da aula, porque é um absurdo ela estar profissionalizando pessoas sem o minimo da segurança né, né? eu to sendo radical? 
+eu realmente não sei, eu sei que ela poderia ter evitado isso tudo se não tivesse usado o claude que eu nem sabia sobre o uso disso em aula, não falou no titulo e tivesse usado de verdade o spring AI, ela usou o basico do basico mesmo, pior que isso
+so cors com *, e advinha... enfim vocês perceberam o repositories? não tem código nenhum lá, oque aconteceu? esqueceu de falar pro claude? esse é o problema de ter usado IA como ela usou, o problema não é a IA construir o sistema, isso ai vai 
+acontecer ja trabalhei em empresas que usam claude ate pra responder a esposa... o problema é que do jeito que ela fez o claude ficou limitado a capacidade intelectual dela... o repository ta la vazio, nem sei pra que foi criado, coisa que não aconteceu
+na aula de 2022. por fim, minha impressão é que foi uma aula feita as pressas para surfar nesse hype de "OLHA GENTE A IA SABE FAZER SISTEMAS" cara isso não é novidade pra quem entende de computação! me poupe...
